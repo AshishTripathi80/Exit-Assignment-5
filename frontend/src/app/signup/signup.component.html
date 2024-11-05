@@ -8,7 +8,6 @@
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" placeholder="name" required>
-
           <mat-error *ngIf="signupForm.get('name').invalid && signupForm.get('name').touched">
             Please enter a valid name.
           </mat-error>
@@ -17,7 +16,6 @@
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput formControlName="email" placeholder="email" required>
-
           <mat-error *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">
             Please enter a valid email.
           </mat-error>
@@ -31,7 +29,7 @@
             <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
           <mat-error *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">
-            Please enter a valid Password.
+            Please enter a valid password.
           </mat-error>
         </mat-form-field>
 
@@ -43,7 +41,19 @@
             <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
           <mat-error *ngIf="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched">
-            Please enter a valid Password.
+            Please enter a valid password.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- User Role Dropdown -->
+        <mat-form-field appearance="outline">
+          <mat-label>User Role</mat-label>
+          <mat-select formControlName="userRole" required>
+            <mat-option value="ADMIN">Admin</mat-option>
+            <mat-option value="CUSTOMER">Customer</mat-option>
+          </mat-select>
+          <mat-error *ngIf="signupForm.get('userRole').invalid && signupForm.get('userRole').touched">
+            Please select a valid role.
           </mat-error>
         </mat-form-field>
 

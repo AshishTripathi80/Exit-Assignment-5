@@ -1,6 +1,7 @@
 package com.backend.dto;
 
 
+import com.backend.enums.UserRole;
 import lombok.Data;
 
 @Data
